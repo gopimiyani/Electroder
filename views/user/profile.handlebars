@@ -1,0 +1,178 @@
+<!-- Top bar-->
+<div class="top-bar">
+    <div class="">
+        <div class="row d-flex align-items-center">
+            <div class="col-md-6 d-md-block d-none">
+            </div>
+            <div class="col-md-6">
+                <div class="d-flex justify-content-md-end justify-content-between">
+                    <ul class="list-inline contact-info d-block d-md-none">
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-phone"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>
+                    </ul>
+                    {{#if customer}}
+                    <a href='#' onclick="window.location.href = '../customer/logout'" class="signup-btn">
+                        <i class="fa fa-sign-out"></i><span class="d-none d-md-inline-block">Log
+                            Out</span></a>
+                </div>
+                {{else}}
+                <div class="login"><a href="#" data-toggle="modal" data-target="#login-modal" class="login-btn">
+                        <i class="fa fa-sign-in"></i><span class="d-none d-md-inline-block">Sign In</span></a>
+
+                    <a href='#' onclick="window.location.href = '../user/signup'" class="signup-btn">
+                        <i class="fa fa-user"></i><span class="d-none d-md-inline-block">Sign
+                            Up</span></a></div>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- Top bar end-->
+
+<!-- Navbar Start-->
+<header class="nav-holder make-sticky">
+    <div id="navbar" role="navigation" class="navbar navbar-expand-lg">
+
+        <h2>
+            <i class="fa fa-laptop" style="font-size:36px; padding-right: 15px;padding-left: 50px;"></i>Electroder</h1>
+
+            <button type="button" data-toggle="collapse" data-target="#navigation" class="navbar-toggler btn-template-outlined"><span
+                    class="sr-only">Toggle navigation</span><i class="fa fa-align-justify"></i></button>
+
+            <div id="navigation" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item dropdown ">
+                        <a href='#' onclick="window.location.href = '../user/home'" data-toggle="dropdown" class="">Home
+                            <b class="caret"></b></a>
+                        <b class="caret"></b>
+                    </li>
+                    <li class="nav-item dropdown menu-large">
+                        <a href='#' onclick="window.location.href = '../user/laptops'" data-toggle="dropdown" class="">Laptops
+                            <b class="caret"></b></a>
+                        <b class="caret"></b>
+                        </button>
+                    </li>
+
+                    <li class="nav-item dropdown menu-large">
+                        <a href='#' onclick="window.location.href = '../user/contact'" data-toggle="dropdown" class="">Contact
+                            <b class="caret"></b></a>
+
+
+                        <b class="caret"></b>
+                        </button>
+                    </li>
+
+                    <li class="nav-item dropdown menu-large active">
+                        <a href='#' onclick="window.location.href = '../user/profile'" data-toggle="dropdown" class="">Profile
+                            <b class="caret"></b></a>
+                        <b class="caret"></b>
+                        </button>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div id="search" class="collapse clearfix">
+                <form role="search" class="navbar-form">
+                    <div class="input-group">
+                        <input type="text" placeholder="Search" class="form-control"><span class="input-group-btn">
+
+                    </div>
+                </form>
+            </div>
+    </div>
+    </div>
+</header>
+<!-- Navbar End-->
+
+<!--Profile Start-->
+<div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row d-flex align-items-center flex-wrap">
+            <div class="col-md-7">
+                <h1 class="h2">Profile</h1>
+            </div>
+            <div class="col-md-5">
+                <ul class="breadcrumb d-flex justify-content-end">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="content">
+    <div class="container">
+        <div class="row bar">
+            <div id="customer-account" class="col-lg-9 clearfix">
+                <br>
+                <br>
+                <div class="bo3">
+                    <div class="heading">
+                        <h3 class="text-uppercase">Personal details</h3>
+                    </div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="firstname">Name</label>
+                                    <input id="firstname" value={{customer.username}} type="text" class="form-control"
+                                        disabled>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="email_account">Email</label>
+                                    <input id="email_account" value={{customer.account_details.email}} type="text"
+                                        class="form-control" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="lastname">User Name</label>
+                                    <input id="lastname" value={{customer.account_details.name}} type="text" class="form-control"
+                                        disabled>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="phone">Contact Number</label>
+                                    <input id="phone" value={{customer.account_details.contact_number}} type="text"
+                                        class="form-control" disabled>
+                                </div>
+                            </div>
+
+                        </div>
+                        {{!-- <div class="row">
+                            <div class="col-md-12">
+
+                                <div class="form-group">
+                                    <label for="Adress">Address</label>
+                                    <textarea id="address" value={{customer.account_details.address}} type="textarea"
+                                        class="form-control" disabled>
+                                </div>
+                            </div>
+                        </div> --}}
+                        {{!-- <div class="col-md-12 text-center">
+                            <button type="submit" class="btn btn-template-outlined"><i class="fa fa-save"></i> Save
+                                changes</button>
+                        </div> --}}
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Profile End-->
+
+<!--SignUp End-->
+
+{{!--
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="../../routes/login.js" type="text/javascript"></script> --}}
+

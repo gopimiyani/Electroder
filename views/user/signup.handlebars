@@ -1,0 +1,201 @@
+<!-- Top bar-->
+<div class="top-bar">
+    <div class="">
+        <div class="row d-flex align-items-center">
+            <div class="col-md-6 d-md-block d-none">
+
+            </div>
+            <div class="col-md-6">
+                <div class="d-flex justify-content-md-end justify-content-between">
+                    <ul class="list-inline contact-info d-block d-md-none">
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-phone"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>
+                    </ul>
+                    {{#if customer}}
+
+
+                    <a href='#' onclick="window.location.href = '../customer/logout'" class="signup-btn">
+                        <i class="fa fa-sign-out"></i><span class="d-none d-md-inline-block">Log
+                            Out</span></a>
+                </div>
+                {{else}}
+                <div class="login"><a href="#" data-toggle="modal" data-target="#login-modal" class="login-btn">
+                        <i class="fa fa-sign-in"></i><span class="d-none d-md-inline-block">Sign In</span></a>
+
+                    <a href='#' onclick="window.location.href = '../user/signup'" class="signup-btn">
+                        <i class="fa fa-user"></i><span class="d-none d-md-inline-block">Sign
+                            Up</span></a></div>
+                {{/if}}
+
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- Top bar end-->
+<!-- Login Modal-->
+<div id="login-modal" tabindex="-1" role="dialog" aria-labelledby="login-modalLabel" aria-hidden="true" class="modal fade">
+    <div role="document" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 id="login-modalLabel" class="modal-title">Customer Login</h1>
+                <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="/user/login">
+
+                    <div class="form-group">
+                        <label for="username"></label>
+                        <input name="username" type="text" id="username" type="text" placeholder="username" class="form-control"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password_modal"></label>
+                        <input id="password_modal" name="password" id="password" type="password" placeholder="password"
+                            class="form-control">
+                    </div>
+                    <p class="text-center">
+                        <button class="btn btn-template-outlined" id="loginForm" type="submit"><i class="fa fa-sign-in"></i>
+                            Log in</button>
+                    </p>
+                </form>
+                <p class="text-center text-muted">Not registered yet?</p>
+                <p class="text-center text-muted"><a onclick="window.location.href = '../user/signup'" href='#'>
+                        <strong>Register now</strong></a>! It is
+                    easy and done in 1 minute and gives you access to special discounts and much more!</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Login modal end-->
+
+<!-- Navbar Start-->
+<header class="nav-holder make-sticky">
+    <div id="navbar" role="navigation" class="navbar navbar-expand-lg">
+
+        <h2>
+            <i class="fa fa-laptop" style="font-size:36px; padding-right: 15px;padding-left: 50px;"></i>Electroder</h1>
+
+            <button type="button" data-toggle="collapse" data-target="#navigation" class="navbar-toggler btn-template-outlined"><span
+                    class="sr-only">Toggle navigation</span><i class="fa fa-align-justify"></i></button>
+
+            <div id="navigation" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item dropdown ">
+                        <a  href='#' onclick="window.location.href = '../user/home'" data-toggle="dropdown" class="">Home
+                            <b class="caret"></b></a>
+                        <b class="caret"></b>
+                    </li>
+                    <li class="nav-item dropdown menu-large">
+                        <a href='#'  onclick="window.location.href = '../user/laptops'" data-toggle="dropdown" class="">Laptops
+                            <b class="caret"></b></a>
+                        <b class="caret"></b>
+                        </button>
+                    </li>
+
+                    <li class="nav-item dropdown menu-large">
+                        <a href='#'  onclick="window.location.href = '../user/contact'" data-toggle="dropdown" class="">Contact
+                            <b class="caret"></b></a>
+
+
+                        <b class="caret"></b>
+                        </button>
+                    </li>
+    {{#if customer}}
+    <li class="nav-item dropdown menu-large">
+        <a href='#' onclick="window.location.href = '../user/contact'" data-toggle="dropdown" class="">Profile
+            <b class="caret"></b></a>
+        <b class="caret"></b>
+        </button>
+    </li>
+    {{/if}}
+
+
+                </ul>
+            </div>
+
+            <div id="search" class="collapse clearfix">
+                <form role="search" class="navbar-form">
+                    <div class="input-group">
+                        <input type="text" placeholder="Search" class="form-control"><span class="input-group-btn">
+
+                    </div>
+                </form>
+            </div>
+    </div>
+    </div>
+</header>
+<!-- Navbar End-->
+
+<!--SignUp Start-->
+<div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row d-flex align-items-center flex-wrap">
+            <div class="col-md-7">
+                <h1 class="h2">New Account </h1>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div id="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="box">
+                    <h2 class="text-uppercase">New account</h2>
+                    <p class="lead">Not our registered customer yet?</p>
+                    <p>With registration with us new world of fashion, fantastic discounts and much more opens to you!
+                        The whole process will not take you more than a minute!</p>
+                    <p class="text-muted">If you have any questions, please feel free to
+                        <a href='#' class='' onclick="window.location.href = '../user/contact'">
+                            contact
+                            us</a>, our customer service center is working for you 24/7.</p>
+                    <hr>
+                    <form method="POST" action="/user/adduser">
+                        <div class="form-group">
+                            <label for="fullname">Name</label>
+                            <input id="fullname" name="fullname"  class="form-control" autofocus required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input class="form-control" name="email" type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="username">User Name</label>
+                            <input class="form-control" id="username" name="username" type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input class="form-control" id="password" name="password" type="password" minlength="8" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact_number">Contact Number</label>
+                            <input class="form-control" name="contact_number" type="tel" id="contact_number" pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
+                                placeholder="format: 2014567890" required>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address</label>
+
+                            <textarea class="form-control" name="address" type="text" id="address" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-template-outlined" id="btnRegister" ><i class="fa fa-user-md"></i>
+                                Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--SignUp End-->
+{{!--
+<script type="text/javascript" src="../../public/js/login.js"></script> --}}
+{{!--
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script> --}}
+{{!-- 
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="../../routes/login.js" type="text/javascript"></script> --}}
