@@ -1,4 +1,4 @@
-# 'Electroder'
+# Electroder
 
 Our project name is Electroder, which a website where users can purchase laptops.
 
