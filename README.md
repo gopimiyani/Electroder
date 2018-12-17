@@ -37,5 +37,3 @@ Acknowledgements
     Fellow students
     w3schools
     stack overflow
-
-## Electroder
