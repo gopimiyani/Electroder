@@ -31,9 +31,9 @@ MongoDB needs to be running in the background and then on hitting npm start, the
 
 ## Authors
 
-Devesh Jain
-Gopi Miyani
-James Fining
+Devesh Jain,
+Gopi Miyani,
+James Fining,
 Priyanka Dassani
 
 ## License
