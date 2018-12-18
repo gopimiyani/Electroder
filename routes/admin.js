@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const xss = require("xss");
 const data = require("../data");
 const prodData = data.productsData;
 
@@ -7,7 +8,7 @@ router.get("/", async (req, res) => {
 
     try {
         const prodList = await prodData.getAllProducts();
-
+        console.log(prodList);
         res.render('admin/crud', { prodList });
     } catch (e) {
         res.status(500).send();
@@ -24,7 +25,7 @@ router.get("/addlaptop", async (req, res) => {
 
 router.get("/updatelaptop/:id", async (req, res) => {
     try {
-        const prod = await prodData.getProduct(req.params.id)
+        const prod = await prodData.getProduct(xss(req.params.id))
         console.log(prod)
         res.render('admin/updatelaptop', { prod });
     } catch (e) {
@@ -36,7 +37,7 @@ router.get("/updatelaptop/:id", async (req, res) => {
 router.get("/deletelaptop/:id", async (req, res) => {
     try {
         //const prod = await prodData.getProduct(req.params.id)
-        const prod1 = await prodData.removeProduct(req.params.id)
+        const prod1 = await prodData.removeProduct(xss(req.params.id))
         console.log(prod1)
         res.redirect("/admin");
     } catch (e) {
@@ -46,15 +47,15 @@ router.get("/deletelaptop/:id", async (req, res) => {
 })
 router.post("/updatedlaptop", async (req, res) => {
     try {
-        const updatedcontent = req.body;
+        const updatedcontent =req.body;
         const updatedlaptop = {
             prod_name: updatedcontent.name,
             prod_brand: updatedcontent.brand,
-            prod_price: "$ " + updatedcontent.price,
-            prod_screensize: updatedcontent.ss + " Inches",
-            prod_ram: updatedcontent.ram + " GB",
+            prod_price:  updatedcontent.price,
+            prod_screensize: updatedcontent.ss ,
+            prod_ram: updatedcontent.ram ,
             prod_processor: updatedcontent.processor,
-            prod_hard_disk_size: updatedcontent.hdd + " TB",
+            prod_hard_disk_size: updatedcontent.hdd ,
             prod_rating: updatedcontent.rating,
             sold: updatedcontent.sold
         }

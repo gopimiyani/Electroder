@@ -46,13 +46,13 @@
         <form method="POST" action="/user/login">
 
           <div class="form-group">
-            <label for="username"></label>
-            <input name="username" type="text" id="username" type="text" placeholder="username" class="form-control"
+            <label for="username" id="lblusername"></label>
+            <input name="username" type="text" id="username"  placeholder="username" class="form-control"
               required>
           </div>
           <div class="form-group">
-             <label for="password_modal"></label>
-            <input id="password_modal" name="password" id="password" type="password" placeholder="password" class="form-control">
+             <label for="password" id="lblpassword"></label>
+            <input  name="password" id="password" type="password" placeholder="password" class="form-control">
           </div>
           <p class="text-center">
             <button class="btn btn-template-outlined" id="loginForm" type="submit"><i class="fa fa-sign-in"></i> Log in</button>
@@ -71,8 +71,8 @@
 <!-- Navbar Start-->
 <header class="nav-holder make-sticky">
   <div id="navbar" role="navigation" class="navbar navbar-expand-lg">
-    <h2>
-      <i class="fa fa-laptop" style="font-size:36px; padding-right: 15px;padding-left: 50px;"></i>Electroder</h1>
+    
+      <i class="fa fa-laptop" style="font-size:36px; padding-right: 15px;padding-left: 50px;"></i>Electroder
       {{!-- <button type="button" data-toggle="collapse" data-target="#navigation" class="navbar-toggler btn-template-outlined"><span
           class="sr-only">Toggle navigation</span><i class="fa fa-align-justify"></i></button> --}}
       <div id="navigation" class="navbar-collapse collapse">
@@ -86,34 +86,38 @@
             <a href='#' onclick="window.location.href = '../../../user/laptops'" data-toggle="dropdown" class="">Laptops
               <b class="caret"></b></a>
             <b class="caret"></b>
-            </button>
+          
           </li>
           <li class="nav-item dropdown menu-large">
             <a href='#' onclick="window.location.href = '../../../user/contact'" data-toggle="dropdown" class="">Contact
               <b class="caret"></b></a>
             <b class="caret"></b>
-            </button>
+        
           </li>
+            </ul>
               {{#if customer}}
+                     <ul class="nav navbar-nav ml-auto">
+             
               <li class="nav-item dropdown menu-large">
                 <a href='#' onclick="window.location.href = '../../../user/profile'" data-toggle="dropdown" class="">Profile
                   <b class="caret"></b></a>
                 <b class="caret"></b>
-                </button>
+                
               </li>
+              </ul>
               {{/if}}
 
-        </ul>
+        
       </div>
       <div id="search" class="collapse clearfix">
         <form role="search" class="navbar-form">
           <div class="input-group">
-            <input type="text" placeholder="Search" class="form-control"><span class="input-group-btn">
+            <input type="text" placeholder="Search" class="form-control"><span class="input-group-btn"></span>
           </div>
         </form>
       </div>
   </div>
-  </div>
+  
 </header>
 <!-- Navbar End-->
 <!--LaptopDetail Start-->
@@ -134,9 +138,9 @@
       <div class="col-sm-6">
         <div class="box">
         <div data-slider-id="1" class="owl-carousel shop-detail-carousel">
-          <div> <img src="{{laptopDetail.prod_image1}}" alt="laptop image" class="img-fluid"></div>
-          <div> <img src="{{laptopDetail.prod_image2}}" alt="laptop image" class="img-fluid"></div>
-          <div> <img src="{{laptopDetail.prod_image3}}" alt="laptop image" class="img-fluid"></div>
+          <div> <img src="{{laptopDetail.prod_image1}}" alt="laptopimage" class="img-fluid"></div>
+          <div> <img src="{{laptopDetail.prod_image2}}" alt="laptopimage" class="img-fluid"></div>
+          <div> <img src="{{laptopDetail.prod_image3}}" alt="laptopimage" class="img-fluid"></div>
         </div>
         </div>
       </div>
@@ -155,9 +159,9 @@
           </form>
         </div>
         <div data-slider-id="1" class="owl-thumbs">
-          <button class="owl-thumb-item"><img src="{{laptopDetail.prod_image1}}" alt="laptop image" class="img-fluid"></button>
-          <button class="owl-thumb-item"><img src="{{laptopDetail.prod_image2}}" alt="laptop image" class="img-fluid"></button>
-          <button class="owl-thumb-item"><img src="{{laptopDetail.prod_image3}}" alt="laptop image" class="img-fluid"></button>
+          <button class="owl-thumb-item"><img src="{{laptopDetail.prod_image1}}" alt="laptopimage" class="img-fluid"></button>
+          <button class="owl-thumb-item"><img src="{{laptopDetail.prod_image2}}" alt="laptopimage" class="img-fluid"></button>
+          <button class="owl-thumb-item"><img src="{{laptopDetail.prod_image3}}" alt="laptopimage" class="img-fluid"></button>
         </div>
       </div>
     </div>
@@ -177,5 +181,6 @@
       </ul>
     </div>
   </div>
+</div>
 
 <!--LaptopDetail End-->

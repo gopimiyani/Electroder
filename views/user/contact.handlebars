@@ -32,7 +32,6 @@
     </div>
   </div>
 </div>
-</div>
 <!-- Top bar end-->
 
 <!-- Login Modal-->
@@ -47,13 +46,13 @@
         <form method="POST" action="/user/login">
 
           <div class="form-group">
-            <label for="username"></label>
-            <input name="username" type="text" id="username" type="text" placeholder="username" class="form-control"
+            <label for="username" id="lblusername"></label>
+            <input name="username" type="text" id="username"  placeholder="username" class="form-control"
               required>
           </div>
           <div class="form-group">
-             <label for="password_modal"></label>
-            <input id="password_modal" name="password" id="password" type="password" placeholder="password" class="form-control">
+             <label for="password" id="lblpassword"></label>
+            <input  name="password" id="password" type="password" placeholder="password" class="form-control">
           </div>
           <p class="text-center">
             <button class="btn btn-template-outlined" id="loginForm" type="submit"><i class="fa fa-sign-in"></i> Log in</button>
@@ -73,8 +72,8 @@
 <header class="nav-holder make-sticky">
   <div id="navbar" role="navigation" class="navbar navbar-expand-lg">
 
-    <h2>
-      <i class="fa fa-laptop" style="font-size:36px; padding-right: 15px;padding-left: 50px;"></i>Electroder</h1>
+   
+      <i class="fa fa-laptop" style="font-size:36px; padding-right: 15px;padding-left: 50px;"></i>Electroder
 
       <button type="button" data-toggle="collapse" data-target="#navigation" class="navbar-toggler btn-template-outlined"><span
           class="sr-only">Toggle navigation</span><i class="fa fa-align-justify"></i></button>
@@ -94,7 +93,7 @@
 
 
             <b class="caret"></b>
-            </button>
+          
           </li>
 
 
@@ -104,31 +103,34 @@
 
 
             <b class="caret"></b>
-            </button>
+          
           </li>
-
+  </ul>
               {{#if customer}}
+                     <ul class="nav navbar-nav ml-auto">
+             
               <li class="nav-item dropdown menu-large">
                 <a href='#' onclick="window.location.href = '../user/profile'" data-toggle="dropdown" class="">Profile
                   <b class="caret"></b></a>
                 <b class="caret"></b>
-                </button>
+              
               </li>
+              </ul>
               {{/if}}
 
-        </ul>
+       
       </div>
 
       <div id="search" class="collapse clearfix">
         <form role="search" class="navbar-form">
           <div class="input-group">
-            <input type="text" placeholder="Search" class="form-control"><span class="input-group-btn">
+            <input type="text" placeholder="Search" class="form-control"><span class="input-group-btn"></span>
 
           </div>
         </form>
       </div>
   </div>
-  </div>
+  
 </header>
 <!-- Navbar End-->
 
@@ -166,29 +168,30 @@
           <div class="box-simple">
             <div class="icon-outlined"><i class="fa fa-map-marker"></i></div>
             <h3 class="h4">Address</h3>
-            <p>Stevens Institute of Technology<br> 1 Castle Point Terrace<br> Hoboken, <strong>New Jersey, 07030</strong></p>
+            <p style="color:#767676">Stevens Institute of Technology<br> 1 Castle Point Terrace<br> Hoboken, <strong>New Jersey, 07030</strong></p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="box-simple">
             <div class="icon-outlined"><i class="fa fa-phone"></i></div>
             <h3 class="h4">Call center</h3>
-            <p>This number is toll free.</p>
-            <p><strong>+1234567890</strong></p>
+            <p style="color:#767676">This number is toll free.</p>
+            <p style="color:#767676">+1234567890</p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="box-simple">
             <div class="icon-outlined"><i class="fa fa-envelope"></i></div>
             <h3 class="h4">Electronic support</h3>
-            <p>Please feel free to write an email to us for queries.</p>
+            <p style="color:#767676">Please feel free to write an email to us for queries.</p>
             <ul class="list-unstyled text-sm">
-              <li><strong><a href="mailto:">info@electroder.in</a></strong></li>
+              <li><strong><a href="mailto:" style="color:#00885f">info@electroder.in</a></strong></li>
             
             </ul>
           </div>
         </div>
       </div>
     </section>
-
+</div>
+</div>
     <!-- Contact End-->

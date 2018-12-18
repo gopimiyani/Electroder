@@ -32,41 +32,38 @@
         </div>
     </div>
 </div>
-</div>
 <!-- Top bar end-->
 <!-- Login Modal-->
 <div id="login-modal" tabindex="-1" role="dialog" aria-labelledby="login-modalLabel" aria-hidden="true" class="modal fade">
-    <div role="document" class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 id="login-modalLabel" class="modal-title">Customer Login</h1>
-                <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
-            </div>
-            <div class="modal-body">
-                <form method="POST" action="/user/login">
+  <div role="document" class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 id="login-modalLabel" class="modal-title">Customer Login</h1>
+        <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" action="/user/login">
 
-                    <div class="form-group">
-                        <label for="username"></label>
-                        <input name="username" type="text" id="username" type="text" placeholder="username" class="form-control"
-                            required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password_modal"></label>
-                        <input id="password_modal" name="password" id="password" type="password" placeholder="password"
-                            class="form-control">
-                    </div>
-                    <p class="text-center">
-                        <button class="btn btn-template-outlined" id="loginForm" type="submit"><i class="fa fa-sign-in"></i>
-                            Log in</button>
-                    </p>
-                </form>
-                <p class="text-center text-muted">Not registered yet?</p>
-                <p class="text-center text-muted"><a onclick="window.location.href = '../user/signup'" href='#'>
-                        <strong>Register now</strong></a>! It is
-                    easy and done in 1 minute and gives you access to special discounts and much more!</p>
-            </div>
-        </div>
+          <div class="form-group">
+            <label for="username" id="lblusername"></label>
+            <input name="username" type="text" id="username"  placeholder="username" class="form-control"
+              required>
+          </div>
+          <div class="form-group">
+             <label for="password" id="lblpassword"></label>
+            <input  name="password" id="password" type="password" placeholder="password" class="form-control">
+          </div>
+          <p class="text-center">
+            <button class="btn btn-template-outlined" id="loginForm" type="submit"><i class="fa fa-sign-in"></i> Log in</button>
+          </p>
+        </form>
+        <p class="text-center text-muted">Not registered yet?</p>
+        <p class="text-center text-muted"><a onclick="window.location.href = '../user/signup'" href='#'>
+            <strong>Register now</strong></a>! It is
+          easy and done in 1 minute and gives you access to special discounts and much more!</p>
+      </div>
     </div>
+  </div>
 </div>
 <!-- Login modal end-->
 
@@ -74,8 +71,8 @@
 <header class="nav-holder make-sticky">
     <div id="navbar" role="navigation" class="navbar navbar-expand-lg">
 
-        <h2>
-            <i class="fa fa-laptop" style="font-size:36px; padding-right: 15px;padding-left: 50px;"></i>Electroder</h1>
+        
+            <i class="fa fa-laptop" style="font-size:36px; padding-right: 15px;padding-left: 50px;"></i>Electroder
 
             <button type="button" data-toggle="collapse" data-target="#navigation" class="navbar-toggler btn-template-outlined"><span
                     class="sr-only">Toggle navigation</span><i class="fa fa-align-justify"></i></button>
@@ -91,7 +88,7 @@
                         <a href='#'  onclick="window.location.href = '../user/laptops'" data-toggle="dropdown" class="">Laptops
                             <b class="caret"></b></a>
                         <b class="caret"></b>
-                        </button>
+                       
                     </li>
 
                     <li class="nav-item dropdown menu-large">
@@ -100,31 +97,37 @@
 
 
                         <b class="caret"></b>
-                        </button>
+                      
                     </li>
-    {{#if customer}}
+                </ul>
+              {{#if customer}}
+                     <ul class="nav navbar-nav ml-auto">
+
+   
+    
     <li class="nav-item dropdown menu-large">
         <a href='#' onclick="window.location.href = '../user/contact'" data-toggle="dropdown" class="">Profile
             <b class="caret"></b></a>
         <b class="caret"></b>
-        </button>
+     
     </li>
-    {{/if}}
+    
 
 
                 </ul>
+                {{/if}}
             </div>
 
             <div id="search" class="collapse clearfix">
                 <form role="search" class="navbar-form">
                     <div class="input-group">
-                        <input type="text" placeholder="Search" class="form-control"><span class="input-group-btn">
+                        <input type="text" placeholder="Search" class="form-control"><span class="input-group-btn"></span>
 
                     </div>
                 </form>
             </div>
     </div>
-    </div>
+   
 </header>
 <!-- Navbar End-->
 
@@ -163,12 +166,12 @@
                             <input class="form-control" name="email" type="email" id="email" required>
                         </div>
                         <div class="form-group">
-                            <label for="username">User Name</label>
-                            <input class="form-control" id="username" name="username" type="text" required>
+                            <label for="username" id="lbluname">User Name</label>
+                            <input class="form-control" id="username1" name="username1" type="text" required>
                         </div>
                         <div class="form-group">
-                            <label for="password">Password</label>
-                            <input class="form-control" id="password" name="password" type="password" minlength="8" required>
+                            <label for="password" id="lblpwd">Password</label>
+                            <input class="form-control" id="password1" name="password1" type="password" minlength="8" required>
                         </div>
                         <div class="form-group">
                             <label for="contact_number">Contact Number</label>
@@ -179,7 +182,7 @@
                         <div class="form-group">
                             <label for="address">Address</label>
 
-                            <textarea class="form-control" name="address" type="text" id="address" required></textarea>
+                            <textarea class="form-control" name="address"  id="address" required></textarea>
                         </div>
                         <div class="text-center">
                             <button type="submit" class="btn btn-template-outlined" id="btnRegister" ><i class="fa fa-user-md"></i>

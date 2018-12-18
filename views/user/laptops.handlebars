@@ -11,6 +11,7 @@
             <li class="list-inline-item"><a href="#"><i class="fa fa-phone"></i></a></li>
             <li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>
           </ul>
+
           {{#if customer}}
 
 
@@ -32,7 +33,6 @@
     </div>
   </div>
 </div>
-</div>
 <!-- Top bar end-->
 <!-- Login Modal-->
 <div id="login-modal" tabindex="-1" role="dialog" aria-labelledby="login-modalLabel" aria-hidden="true" class="modal fade">
@@ -46,13 +46,13 @@
         <form method="POST" action="/user/login">
 
           <div class="form-group">
-            <label for="username"></label>
-            <input name="username" type="text" id="username" type="text" placeholder="username" class="form-control"
+            <label for="username" id="lblusername"></label>
+            <input name="username" type="text" id="username"  placeholder="username" class="form-control"
               required>
           </div>
           <div class="form-group">
-             <label for="password_modal"></label>
-            <input id="password_modal" name="password" id="password" type="password" placeholder="password" class="form-control">
+             <label for="password" id="lblpassword"></label>
+            <input  name="password" id="password" type="password" placeholder="password" class="form-control">
           </div>
           <p class="text-center">
             <button class="btn btn-template-outlined" id="loginForm" type="submit"><i class="fa fa-sign-in"></i> Log in</button>
@@ -72,9 +72,8 @@
 <header class="nav-holder make-sticky">
   <div id="navbar" role="navigation" class="navbar navbar-expand-lg">
 
-    <h2>
-      <i class="fa fa-laptop" style="font-size:36px; padding-right: 15px;padding-left: 50px;"></i>Electroder</h1>
-
+    
+      <i class="fa fa-laptop" style="font-size:36px; padding-right: 15px;padding-left: 50px;"></i>Electroder
       <button type="button" data-toggle="collapse" data-target="#navigation" class="navbar-toggler btn-template-outlined"><span
           class="sr-only">Toggle navigation</span><i class="fa fa-align-justify"></i></button>
 
@@ -92,39 +91,37 @@
               <b class="caret"></b></a>
 
             <b class="caret"></b>
-            </button>
+           
           </li>
-
-
           <li class="nav-item dropdown menu-large">
             <a href='#' onclick="window.location.href = '../user/contact'" data-toggle="dropdown" class="">Contact
               <b class="caret"></b></a>
             <b class="caret"></b>
-            </button>
+           
           </li>
-    {{#if customer}}
-    <li class="nav-item dropdown menu-large">
-      <a href='#' onclick="window.location.href = '../user/profile'" data-toggle="dropdown" class="">Profile
-        <b class="caret"></b></a>
-      <b class="caret"></b>
-      </button>
-    </li>
-    {{/if}}
-
-
+            </ul>
+             {{#if customer}}
+                     <ul class="nav navbar-nav ml-auto">
+          
+          <li class="nav-item dropdown menu-large">
+            <a href='#' onclick="window.location.href = '../user/profile'" data-toggle="dropdown" class="">Profile
+              <b class="caret"></b></a>
+            <b class="caret"></b>
+         
+          </li>
+         
         </ul>
+         {{/if}}
       </div>
-
       <div id="search" class="collapse clearfix">
         <form role="search" class="navbar-form">
           <div class="input-group">
-            <input type="text" placeholder="Search" class="form-control"><span class="input-group-btn">
-
+            <input type="text" placeholder="Search" class="form-control"><span class="input-group-btn"></span>
           </div>
         </form>
       </div>
   </div>
-  </div>
+ 
 </header>
 <!-- Navbar End-->
 
@@ -143,283 +140,31 @@
     </div>
   </div>
 </div>
+
+
 <div id="content">
   <div class="container">
     <div class="row bar">
-      <div class="col-md-9">
-      
-        <!-- MENUS AND FILTERS-->
-        <div class="panel panel-default sidebar-menu">
-          <div class="panel-heading">
-            {{!-- <h2 class="h4 panel-title">Categories</h2> --}}
-          </div>
-
-        </div>
-      </div>
-        <!-- Brands Filter Start-->
-        <div class="panel panel-default sidebar-menu">
-          <div class="panel-heading d-flex align-items-center justify-content-between">
-             {{!--  
-            <h2 class="h4 panel-title">Brands</h2>
-          </div>
-          <div class="panel-body">
-            <form>
-              <div class="form-group">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> Apple
-                  </label>
-                </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> Dell
-                  </label>
-                </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> HP
-                  </label>
-                </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> Lenovo
-                  </label>
-                </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> Microsoft
-                  </label>
-                </div>
+      <!-- MENUS AND FILTERS-->
+      <div class="col-md-12">
+        <div class="row products products-big">
+          {{#each prodList}}
+          <div class="col-lg-5 col-md-6">
+            <div class="product">
+              <div class="image">
+                <img src="{{this.prod_image2}}" alt="laptopimage" class="img-fluid image1"></div>
+              <div class="text">
+                <h3 class="h5"><a href="#" onclick="window.location.href = '../user/laptops/laptopdetail/{{this._id}}'">{{this.prod_name}}</a></h3>
+                <p class="price">price ${{this.prod_price}} </p>
               </div>
-
-            </form>
-          </div>
-        </div>
-        <!-- Brands Filter End-->
-
-
-        <!-- Price Filter Start-->
-        <div class="panel panel-default sidebar-menu">
-          <div class="panel-heading d-flex align-items-center justify-content-between">
-            <h3 class="h4 panel-title">Price</h3>
-          </div>
-          <div class="panel-body">
-            <form>
-              <div class="form-group">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> Under $500
-                  </label>
-                </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> $500 to $1000
-                  </label>
-                </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> $1000 & Above
-                  </label>
-                </div>
-
-              </div>
-
-            </form>
-          </div>
-        </div>
-        <!-- Price Filter End-->
-
-
-        <!-- ScreenSize Filter Start-->
-        <div class="panel panel-default sidebar-menu">
-          <div class="panel-heading d-flex align-items-center justify-content-between">
-            <h3 class="h4 panel-title">Screen Size</h3>
-          </div>
-          <div class="panel-body">
-            <form>
-              <div class="form-group">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> 12 Inches & Under
-                  </label>
-                </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> 12 to 14.9 Inches
-                  </label>
-                </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> 17 Inches & Above
-                  </label>
-                </div>
-
-              </div>
-
-            </form>
-          </div>
-        </div>
-        <!-- ScreenSize Filter End-->
-
-
-        <!-- RAM Filter Start-->
-        <div class="panel panel-default sidebar-menu">
-          <div class="panel-heading d-flex align-items-center justify-content-between">
-            <h3 class="h4 panel-title">RAM</h3>
-          </div>
-          <div class="panel-body">
-            <form>
-              <div class="form-group">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> Up to 4 GB
-                  </label>
-                </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> 6 GB to 32 GB
-                  </label>
-                </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> 64 GB & Above
-                  </label>
-                </div>
-
-              </div>
-
-            </form>
-          </div>
-        </div>
-        <!-- RAM Filter End-->
-
-
-        <!-- Processor Filter Start-->
-        <div class="panel panel-default sidebar-menu">
-          <div class="panel-heading d-flex align-items-center justify-content-between">
-            <h3 class="h4 panel-title">Processor</h3>
-          </div>
-          <div class="panel-body">
-            <form>
-              <div class="form-group">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> Intel Core i3
-                  </label>
-                </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> Intel Core i5
-                  </label>
-                </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> Intel Core i7
-                  </label>
-                </div>
-
-              </div>
-
-            </form>
-          </div>
-        </div>
-        <!-- Processor Filter End-->
-
-
-
-
-        <!-- HardDiskSize Filter Start-->
-        <div class="panel panel-default sidebar-menu">
-          <div class="panel-heading d-flex align-items-center justify-content-between">
-            <h3 class="h4 panel-title">Hard Disk Size</h3>
-          </div>
-          <div class="panel-body">
-            <form>
-              <div class="form-group">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> 500 GB & Under
-                  </label>
-                </div>
-
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> 501 GB to 2TB
-                  </label>
-                </div>
-
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> 3 TB & Above
-                  </label>
-                </div>
-              </div>
-
-            </form>
-          </div>
-        </div>
-        <!-- HardDiskSize Filter End-->
-
-
-
-        <!-- Rating Filter Start-->
-        <div class="panel panel-default sidebar-menu">
-          <div class="panel-heading d-flex align-items-center justify-content-between">
-            <h3 class="h4 panel-title">Rating</h3>
-          </div>
-          <div class="panel-body">
-            <form>
-              <div class="form-group">
-
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> 3 Stars & Up
-                  </label>
-                </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> 4 Stars & Up
-                  </label>
-                </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> 5 Stars
-                  </label>
-                </div>
-              </div>
-
-            </form>
-          </div>
-        </div>
-        <!-- Rating Filter End-->
-
-
-        <button class="btn btn-template-outlined" style="color:#4fbfa8"><i class="fa fa-pencil"></i> Apply Filters</button>
-      </div>
-     
-     --}}
-    <div class="col-md-9">
-      <div class="row products products-big">
-        {{#each prodList}}
-        <div class="col-lg-5 col-md-6">
-          <div class="product"> 
-            <div class="image">
-            <img src="{{this.prod_image2}}" alt="laptop image" class="img-fluid image1"></div>
-            <div class="text">
-              <h3 class="h5"><a href="#" onclick="window.location.href = '../user/laptops/laptopdetail/{{this._id}}'">{{this.prod_name}}</a></h3>
-              <p class="price">price ${{this.prod_price}} </p>
-           
             </div>
           </div>
+          {{/each}}
         </div>
-        {{/each}}
       </div>
     </div>
   </div>
-  
 </div>
-</div>
-</div>
-</div>
+
 
 <!-- Display Laptops End-->

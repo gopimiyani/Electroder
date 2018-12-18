@@ -565,7 +565,6 @@ table input[type="number"] {
 }
 
 .top-bar {
-  background: #555;
   color: #fff;
   font-size: 0.9rem;
   padding: 10px 0;
@@ -595,7 +594,7 @@ table input[type="number"] {
 }
 
 .top-bar a.login-btn, .top-bar a.signup-btn {
-  color: #eee;
+  color:black;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   text-decoration: none !important;
@@ -3053,7 +3052,7 @@ h6,
   font-family: inherit;
   font-weight: 700;
   line-height: 1.1;
-  color: inherit;
+  color: black;
 }
 
 h1,

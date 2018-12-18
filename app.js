@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 var session = require('express-session');
+const xss = require("xss");
 const cookieParser=require("cookie-parser");
 const app = express();
 const static = express.static(__dirname + "/public");

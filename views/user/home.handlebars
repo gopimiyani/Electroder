@@ -14,7 +14,6 @@
           </ul>
           {{#if customer}}
 
-
           <a href='#' onclick="window.location.href = '../customer/logout'" class="signup-btn">
             <i class="fa fa-sign-out"></i><span class="d-none d-md-inline-block">Log
               Out</span></a>
@@ -33,7 +32,6 @@
     </div>
   </div>
 </div>
-</div>
 <!-- Top bar end-->
 <!-- Login Modal-->
 <div id="login-modal" tabindex="-1" role="dialog" aria-labelledby="login-modalLabel" aria-hidden="true" class="modal fade">
@@ -47,11 +45,12 @@
         <form method="POST" action="/user/login">
 
           <div class="form-group">
-            <input name="username" type="text" id="username" type="text" placeholder="username" class="form-control"
-              required>
+            <label for="username" id="lblusername"></label>
+            <input name="username" type="text" id="username" placeholder="username" class="form-control" required>
           </div>
           <div class="form-group">
-            <input id="password_modal" name="password" id="password" type="password" placeholder="password" class="form-control">
+            <label for="password" id="lblpassword"></label>
+            <input name="password" id="password" type="password" placeholder="password" class="form-control">
           </div>
           <p class="text-center">
             <button class="btn btn-template-outlined" id="loginForm" type="submit"><i class="fa fa-sign-in"></i> Log in</button>
@@ -65,6 +64,7 @@
     </div>
   </div>
 </div>
+
 <!-- Login modal end-->
 
 
@@ -73,59 +73,63 @@
 <header class="nav-holder make-sticky">
   <div id="navbar" role="navigation" class="navbar navbar-expand-lg">
 
-    <h2>
-      <i class="fa fa-laptop" style="font-size:36px; padding-right: 15px;padding-left: 50px;"></i>Electroder</h1>
 
-      <button type="button" data-toggle="collapse" data-target="#navigation" class="navbar-toggler btn-template-outlined"><span
-          class="sr-only">Toggle navigation</span><i class="fa fa-align-justify"></i></button>
+    <i class="fa fa-laptop" style="font-size:36px; padding-right: 15px;padding-left: 50px;"></i>Electroder
 
-      <div id="navigation" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav ml-auto">
+    <button type="button" data-toggle="collapse" data-target="#navigation" class="navbar-toggler btn-template-outlined"><span
+        class="sr-only">Toggle navigation</span><i class="fa fa-align-justify"></i></button>
 
-          <li class="nav-item dropdown active">
-            <a href='#' onclick="" data-toggle="dropdown" class="">Home
-              <b class="caret"></b></a>
+    <div id="navigation" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav ml-auto">
 
-            <b class="caret"></b>
-          </li>
-          <li class="nav-item dropdown menu-large">
-            <a href='#' onclick="window.location.href = '../user/laptops'" data-toggle="dropdown" class="">Laptops
-              <b class="caret"></b></a>
+        <li class="nav-item dropdown active">
+          <a href='#' onclick="" data-toggle="dropdown" class="">Home
+            <b class="caret"></b></a>
 
-
-            <b class="caret"></b>
-            </button>
-          </li>
+          <b class="caret"></b>
+        </li>
+        <li class="nav-item dropdown menu-large">
+          <a href='#' onclick="window.location.href = '../user/laptops'" data-toggle="dropdown" class="">Laptops
+            <b class="caret"></b></a>
 
 
-          <li class="nav-item dropdown menu-large">
-            <a href='#' onclick="window.location.href = '../user/contact'" data-toggle="dropdown" class="">Contact
-              <b class="caret"></b></a>
-            <b class="caret"></b>
-            </button>
-          </li>
-          {{#if customer}}
-          <li class="nav-item dropdown menu-large">
-            <a href='#' onclick="window.location.href = '../user/profile'" data-toggle="dropdown" class="">Profile
-              <b class="caret"></b></a>
-            <b class="caret"></b>
-            </button>
-          </li>
-          {{/if}}
+          <b class="caret"></b>
 
-        </ul>
-      </div>
+        </li>
 
-      <div id="search" class="collapse clearfix">
-        <form role="search" class="navbar-form">
-          <div class="input-group">
-            <input type="text" placeholder="Search" class="form-control"><span class="input-group-btn">
 
-          </div>
-        </form>
-      </div>
+        <li class="nav-item dropdown menu-large">
+          <a href='#' onclick="window.location.href = '../user/contact'" data-toggle="dropdown" class="">Contact
+            <b class="caret"></b></a>
+          <b class="caret"></b>
+
+        </li>
+      </ul>
+      {{#if customer}}
+      <ul class="nav navbar-nav ml-auto">
+
+        <li class="nav-item dropdown menu-large">
+          <a href='#' onclick="window.location.href = '../user/profile'" data-toggle="dropdown" class="">Profile
+            <b class="caret"></b></a>
+          <b class="caret"></b>
+
+        </li>
+      </ul>
+      {{/if}}
+
+
+    </div>
+
+    <div id="search" class="collapse clearfix">
+      <form role="search" class="navbar-form">
+        <div class="input-group">
+          <input type="text" placeholder="Search" class="form-control"><span class="input-group-btn"></span>
+
+        </div>
+      </form>
+    </div>
   </div>
-  </div>
+
 </header>
 <!-- Navbar End-->
 
@@ -138,18 +142,18 @@
       <div class="item">
         <div class="row">
           <div class="col-md-5 text-right">
-        
+
             <h1 class="sliderTitle">MacBook Pro</h1>
             <p>More power.<br>
               More performance.
               <br>More pro.</p>
           </div>
-          <div class="col-md-7"><img src="../../public/img/Slider Iamge_Apple.jpg" alt="laptop image" class="img-fluid"></div>
+          <div class="col-md-7"><img src="../../public/img/Slider_Iamge_Apple.jpg" alt="laptop image" class="img-fluid"></div>
         </div>
       </div>
       <div class="item">
         <div class="row">
-          <div class="col-md-7 text-center"><img src="../../public/img/Slider Iamge_Dell.jpg" alt="laptop image" class="img-fluid"></div>
+          <div class="col-md-7 text-center"><img src="../../public/img/Slider_Iamge_Dell.jpg" alt="laptop image" class="img-fluid"></div>
           <div class="col-md-5">
             <h1 class="sliderTitle">Inspiron Laptops 2-in-1</h1>
             <ul class="list-unstyled">
@@ -171,12 +175,12 @@
               <li>and the latest processors and features.</li>
             </ul>
           </div>
-          <div class="col-md-7"><img src="../../public/img/Slider Iamge_Microsoft.jpg" alt="laptop image" class="img-fluid"></div>
+          <div class="col-md-7"><img src="../../public/img/Slider_Iamge_Microsoft.jpg" alt="laptop image" class="img-fluid"></div>
         </div>
       </div>
       <div class="item">
         <div class="row">
-          <div class="col-md-7"><img src="../../public/img/Slider Iamge_Lenovo.png" alt="laptop image" class="img-fluid"></div>
+          <div class="col-md-7"><img src="../../public/img/Slider_Iamge_Lenovo.png" alt="laptop image" class="img-fluid"></div>
           <div class="col-md-5">
             <h1 class="sliderTitle">Lenovo Laptop</h1>
             <ul class="list-unstyled">
@@ -189,10 +193,3 @@
     </div>
   </div>
 </div>
-
-
-
-{{!-- </div>
-</div>
-</div> --}}
-<!-- Carousel End-->

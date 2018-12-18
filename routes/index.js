@@ -22,7 +22,8 @@ const constructorMethod = app => {
   app.use("/user/laptops", userRoutes);
   app.use("/user/laptopdetail", userRoutes);
   app.use("/user/laptops/laptopdetail", userRoutes);
-
+  app.use("/user/laptops/search",userRoutes);
+  
   app.use("/register", userRoutes);
   app.use("/login", userRoutes);
   app.use("/search", userRoutes);

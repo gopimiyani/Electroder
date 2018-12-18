@@ -1,48 +1,3 @@
-{{!-- <!-- Navbar Start-->
-<header class="nav-holder make-sticky">
-  <div id="navbar" role="navigation" class="navbar navbar-expand-lg">
-    <h2>
-      <i class="fa fa-laptop" style="font-size:36px; padding-right: 15px;padding-left: 50px;"></i>Electroder</h1>
-      <button type="button" data-toggle="collapse" data-target="#navigation" class="navbar-toggler btn-template-outlined">
-        <span class="sr-only">Toggle navigation</span>
-        <i class="fa fa-align-justify"></i>
-      </button>
-      <div id="navigation" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav ml-auto">
-          <li class="nav-item dropdown active">
-            <a onclick="" data-toggle="dropdown" class="dropdown-toggle">Home
-              <b class="caret"></b>
-            </a>
-            <b class="caret"></b>
-          </li>
-          <li class="nav-item dropdown menu-large">
-            <a onclick="window.location.href = '../user/laptops'" data-toggle="dropdown" class="dropdown-toggle">Laptops
-              <b class="caret"></b>
-            </a>
-            <b class="caret"></b>
-            </button>
-          </li>
-          <li class="nav-item dropdown menu-large">
-            <a onclick="window.location.href = '../user/contact'" data-toggle="dropdown" class="dropdown-toggle">Contact
-              <b class="caret"></b>
-            </a>
-            <b class="caret"></b>
-            </button>
-          </li>
-        </ul>
-      </div>
-      <div id="search" class="collapse clearfix">
-        <form role="search" class="navbar-form">
-          <div class="input-group">
-            <input type="text" placeholder="Search" class="form-control">
-            <span class="input-group-btn">
-          </div>
-        </form>
-      </div>
-  </div>
-  </div>
-</header>
-<!-- Navbar End--> --}}
 <!-- Heading Start-->
 <div id="heading-breadcrumbs" class="brder-top-0 border-bottom-0">
   <div class="container">
@@ -57,27 +12,27 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <article>
   <div class="container">
-    <button type="button" onclick="window.location.href= '/admin/addlaptop'" class="btn btn-info btn-block my-4 col-md-2 ">
+    <button type="button" onclick="window.location.href= '/admin/addlaptop'" style="background-color:#008295" class="btn btn-info btn-block my-4 col-md-2 ">
       Add Product </button>
     {{!--
     <a href="/admin/addlaptop">Add</a> --}}
     <div class="row">
       {{#each prodList}}
       <div class="column" style="margin: 35px;">
-        <img src="../../public/img/Slider Iamge_Apple.jpg" alt="laptop image" class="img-fluid">
+        <img src="../../public/img/Slider_Iamge_Apple.jpg" alt="laptop image" class="img-fluid">
         <p>
           
         </p>
         <p class="card-text"> ID : {{this._id}}</p>
         <p class="card-text">Name: {{this.prod_name}}</p>
         <p class="card-text">Brand:{{this.prod_brand}}</p>
-        <p class="card-text">Price:{{this.prod_price}}</p>
-        <p class="card-text">Screen Size:{{this.prod_screensize}} </p>
-        <p class="card-text">RAM:{{this.prod_ram}}</p>
-        <p class="card-text">HDD: {{this.prod_hard_disk_size}}</p>
+        <p class="card-text">Price:${{this.prod_price}}</p>
+        <p class="card-text">Screen Size:{{this.prod_screensize}} Inches </p>
+        <p class="card-text">RAM:{{this.prod_ram}}GB</p>
+        <p class="card-text">HDD: {{this.prod_hard_disk_size}}TB</p>
         <p class="card-text">Processor:{{this.prod_processor}}</p>
         <p class="card-text">Rating: {{this.prod_rating}}</p>
-        <button type="submit" class="btn btn-success btn-block my-2" onclick="window.location.href = '/admin/updatelaptop/{{this._id}}'">
+        <button type="submit" class="btn btn-success btn-block my-2" style="background-color:#008295" onclick="window.location.href = '/admin/updatelaptop/{{this._id}}'">
           Update Product
         </button>
         <button type="submit" class="btn btn-danger btn-block my-2" onclick="window.location.href = '/admin/deletelaptop/{{this._id}}'">
