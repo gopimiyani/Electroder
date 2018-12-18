@@ -20,6 +20,14 @@ We ran all the code against a validator and fixed all the errors
 
 MongoDB needs to be running in the background and then on hitting npm start, the server starts running.
 
+## Steps to Run
+
+1. Open Terminal and hit command 'npm install --save' to install all the dependencies required to run the project, which are mentioned in package.json file.
+2. Run mongoDB in terminal and keep runing it in the background.
+2. Open another terminal window and hit 'npm run seed-db' to seed the database.
+3. Hit 'npm start' which will run the server on http://localhost:3000.
+4. Open Browser and type the above URL, which will redirect to (user-side) website.
+5. To go to the admin-side, type URL: http://localhost:3000/admin 
 
 ## Authors
 
