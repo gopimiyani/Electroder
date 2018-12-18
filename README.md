@@ -25,7 +25,7 @@ MongoDB needs to be running in the background and then on hitting npm start, the
 ## Features
 1. HTML Validation
 2. Web Accessibility
-3. Cross Side Scripting at Admin Side
+3. Cross-Site Scripting at Admin Side
 4. Client and Server Side JavaScript
 5. AJAX
 
