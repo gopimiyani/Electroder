@@ -29,6 +29,13 @@ MongoDB needs to be running in the background and then on hitting npm start, the
 4. Open Browser and type the above URL, which will redirect to (user-side) website.
 5. To go to the admin-side, type URL: http://localhost:3000/admin 
 
+## Features
+1. HTML Validation
+2. Web Accessibility
+3. Cross Side Scripting at Admin Side
+4. Client and Server Side JavaScript
+5. AJAX
+
 ## Authors
 
     Devesh Jain
